@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sophisticated Black & White Design System */
+
+@layer base {
+  :root {
+    /* Core Brand Colors - Black & White Theme */
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 3%;
+
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 60%;
+
+    /* Elegant Accent Colors */
+    --accent: 45 100% 85%;
+    --accent-foreground: 0 0% 3%;
+
+    --gold: 45 100% 70%;
+    --gold-foreground: 0 0% 3%;
+
+    --silver: 0 0% 75%;
+    --silver-foreground: 0 0% 3%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 10%;
+    --ring: 0 0% 98%;
+
+    --radius: 0.75rem;
+
+    /* Elegant Gradients */
+    --gradient-elegant: linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 3%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(45 100% 85%) 0%, hsl(45 80% 75%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(0 0% 98%) 0%, hsl(0 0% 85%) 100%);
+
+    /* Sophisticated Shadows */
+    --shadow-elegant: 0 25px 50px -12px hsl(0 0% 0% / 0.6);
+    --shadow-glow: 0 0 30px hsl(45 100% 85% / 0.15);
+    --shadow-subtle: 0 4px 6px -1px hsl(0 0% 0% / 0.3);
+
+    /* Animation Variables */
+    --transition-elegant: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Sidebar Colors */
+    --sidebar-background: 0 0% 3%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 0 0% 3%;
+    --sidebar-accent: 0 0% 8%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    background: hsl(var(--background));
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  /* Elegant Typography Classes */
+  .text-elegant {
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-hero {
+    @apply text-6xl md:text-8xl font-bold tracking-tight font-playfair;
+    line-height: 0.9;
+  }
+
+  .text-section-title {
+    @apply text-4xl md:text-5xl font-semibold tracking-tight font-playfair;
+  }
+
+  /* Button Variants */
+  .btn-elegant {
+    @apply relative overflow-hidden px-8 py-4 rounded-lg font-medium tracking-wide;
+    @apply bg-transparent border border-foreground text-foreground;
+    @apply transition-all duration-500 ease-out;
+    @apply hover:bg-foreground hover:text-background;
+  }
+
+  .btn-accent {
+    @apply relative overflow-hidden px-8 py-4 rounded-lg font-medium tracking-wide;
+    background: var(--gradient-accent);
+    @apply text-accent-foreground;
+    @apply transition-all duration-500 ease-out;
+    @apply hover:shadow-lg hover:scale-105;
+  }
+
+  /* Animation Classes */
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .animate-fade-up-delay {
+    animation: fadeUp 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .animate-slide-in {
+    animation: slideIn 1s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  /* Hover Effects */
+  .hover-glow {
+    @apply transition-all duration-300;
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Elegant Sections */
+  .section-elegant {
+    @apply py-24 px-6 md:px-12;
+    background: var(--gradient-elegant);
+  }
+}
+
+@layer utilities {
+  /* Custom Keyframes */
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes glow {
+    0%, 100% { 
+      box-shadow: 0 0 20px hsl(45 100% 85% / 0.1);
+    }
+    50% { 
+      box-shadow: 0 0 40px hsl(45 100% 85% / 0.3);
+    }
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+}
