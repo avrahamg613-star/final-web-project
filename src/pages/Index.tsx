@@ -1101,15 +1101,20 @@ const Hero = () => {
             <PrimaryButton onClick={() => scrollToId("contact")}>
               <Phone className="h-4 w-4" /> Book Dovid for Your Wedding
             </PrimaryButton>
-            <a 
+            
               href="tel:+19175009253"
               className="text-white/70 text-sm font-heading tracking-widest hover:text-white transition"
             >
+            <a 
               917-500-9253
             </a>
           </div>
         </div>
 
+      </div>
+    </Section>
+  );
+};
       </div>
     </Section>
   );
