@@ -417,7 +417,7 @@ const Hero = () => {
   const [ready, setReady] = useState(false);
 
   return (
-    <Section id="home" className="relative" effect="diagonal">
+    <Section id="home" className="relative" effect="slide-up">
       <div className="relative h-[86vh] min-h-[600px] overflow-hidden">
         <div className="absolute inset-0 bg-black" />
         <video
@@ -439,21 +439,18 @@ const Hero = () => {
         <div className="absolute inset-x-0 bottom-0 h-48 pointer-events-none"
           style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%)" }}
         />
+        <div className="absolute bottom-16 left-0 right-0 flex flex-col items-center gap-4" style={{ zIndex: 20 }}>
+          <PrimaryButton onClick={() => scrollToId("contact")}>
+            <Phone className="h-4 w-4" /> Book Dovid for Your Wedding
+          </PrimaryButton>
+          
+            href="tel:+19175009253"
+            className="text-white/70 text-sm font-heading tracking-widest hover:text-white transition"
+          >
+            917-500-9253
+          </a>
+        </div>
       </div>
-
-      {/* Button sits OUTSIDE the video div, above all effects */}
-      <div className="absolute bottom-16 left-0 right-0 flex flex-col items-center gap-4" style={{ zIndex: 20 }}>
-        <PrimaryButton onClick={() => scrollToId("contact")}>
-          <Phone className="h-4 w-4" /> Book Dovid for Your Wedding
-        </PrimaryButton>
-        
-          href="tel:+19175009253"
-          className="text-white/70 text-sm font-heading tracking-widest hover:text-white transition"
-        >
-          917-500-9253
-        </a>
-      </div>
-
     </Section>
   );
 };
