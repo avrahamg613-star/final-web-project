@@ -1096,7 +1096,20 @@ const Hero = () => {
           }}
         />
 
-        <div className="relative z-[1] h-full w-full flex flex-col items-center justify-center px-4" />
+        <div className="relative z-[1] h-full w-full flex flex-col items-center justify-center px-4">
+          <div className="flex flex-col items-center gap-4 mt-auto mb-20">
+            <PrimaryButton onClick={() => scrollToId("contact")}>
+              <Phone className="h-4 w-4" /> Book Dovid for Your Wedding
+            </PrimaryButton>
+            <a 
+              href="tel:+19175009253"
+              className="text-white/70 text-sm font-heading tracking-widest hover:text-white transition"
+            >
+              917-500-9253
+            </a>
+          </div>
+        </div>
+
       </div>
     </Section>
   );
