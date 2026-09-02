@@ -417,7 +417,7 @@ const Hero = () => {
   const [ready, setReady] = useState(false);
 
   return (
-    <Section id="home" className="relative" effect="diagonal">
+    <Section id="home" className="relative" effect="slide-up">
       <div className="relative h-[86vh] min-h-[600px] overflow-hidden">
         <div className="absolute inset-0 bg-black" />
         <video
